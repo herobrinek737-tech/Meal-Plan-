@@ -1,0 +1,1477 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#020617">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>CRISP & PREP - Dein 2-Monats Airfryer Wrap-Planer</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Inter & Outfit -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@600;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        h1, h2, h3 {
+            font-family: 'Outfit', sans-serif;
+        }
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1e293b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #475569;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #fb923c;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen flex flex-col antialiased">
+
+    <!-- Navigation / Header -->
+    <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <span class="text-2xl">🔥</span>
+                <span class="text-xl font-extrabold tracking-tight bg-gradient-to-r from-orange-400 via-amber-400 to-yellow-500 bg-clip-text text-transparent">
+                    CRISP & PREP
+                </span>
+            </div>
+            <nav class="hidden md:flex space-x-8 text-sm font-medium">
+                <a href="#recipes" class="text-slate-300 hover:text-orange-400 transition">20 Rezepte</a>
+                <a href="#airfryer" class="text-slate-300 hover:text-orange-400 transition">Airfryer-Rechner</a>
+                <a href="#shopping" class="text-slate-300 hover:text-orange-400 transition">Einkaufszettel</a>
+                <a href="#guide" class="text-slate-300 hover:text-orange-400 transition">Einfrier-Guide</a>
+            </nav>
+            <div class="flex items-center space-x-2">
+                <span class="bg-orange-500/10 text-orange-400 border border-orange-500/20 text-xs px-2.5 py-1 rounded-full font-semibold">
+                    Airfryer Approved 🚀
+                </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow">
+        <!-- Hero Section -->
+        <section class="relative overflow-hidden py-16 sm:py-24 bg-slate-950">
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(251,146,60,0.1),transparent_45%)]"></div>
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="text-center max-w-3xl mx-auto">
+                    <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                        Hasse Frühstück? <br/>
+                        <span class="bg-gradient-to-r from-orange-400 to-amber-500 bg-clip-text text-transparent">Gottlos knusprige Wraps</span> für den Schulweg!
+                    </h1>
+                    <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                        Kein Bock auf Müsli am Morgen? Hier sind 20 deftige, ultra-proteinreiche Meal-Prep-Rezepte komplett ohne Bohnen. Bereite sie in Masse vor, wirf sie ins Eisfach und mach sie morgens in 2 Minuten im Airfryer knusprig heiß!
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="#recipes" class="px-6 py-3 bg-orange-500 hover:bg-orange-600 text-white font-semibold rounded-xl shadow-lg shadow-orange-500/20 transition transform hover:-translate-y-0.5">
+                            Rezepte durchstöbern
+                        </a>
+                        <a href="#airfryer" class="px-6 py-3 bg-slate-800 hover:bg-slate-700 text-slate-200 font-semibold rounded-xl border border-slate-700 transition">
+                            Airfryer-Rechner öffnen
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Airfryer Reheater Calculator & Timer Section -->
+        <section id="airfryer" class="py-12 bg-slate-900 border-y border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="bg-slate-950 rounded-2xl border border-slate-800 p-6 md:p-8 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-orange-500/10 rounded-full blur-3xl"></div>
+                    
+                    <div class="flex flex-col md:flex-row md:items-center justify-between mb-8 pb-6 border-b border-slate-800">
+                        <div>
+                            <h2 class="text-2xl md:text-3xl font-extrabold text-white flex items-center gap-2">
+                                <span>🌪️</span> Der Airfryer-Reheat-Rechner
+                            </h2>
+                            <p class="text-slate-400 text-sm mt-1">Ermittle die perfekte Hitze für deinen Wrap – von eiskalt zu kross-geschmolzen.</p>
+                        </div>
+                        <div class="mt-4 md:mt-0 flex items-center space-x-2 bg-slate-900 px-3 py-1.5 rounded-lg border border-slate-800 text-xs text-slate-400">
+                            <span>💡 Tip:</span> <span>Mit etwas Wasserspray besprühen für Extra-Crunch!</span>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                        <!-- Controls -->
+                        <div class="space-y-6">
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-300 mb-3">Zustand des Wraps</label>
+                                <div class="grid grid-cols-2 gap-3">
+                                    <button onclick="setWrapState('frozen')" id="btn-state-frozen" class="py-3 px-4 rounded-xl border-2 transition text-center font-semibold text-sm flex flex-col items-center justify-center gap-2 bg-orange-500/10 border-orange-500 text-orange-400">
+                                        <span class="text-2xl">❄️</span>
+                                        <span>Schockgefrostet</span>
+                                        <span class="text-[10px] font-normal opacity-80">(Direkt aus dem Eisfach)</span>
+                                    </button>
+                                    <button onclick="setWrapState('thawed')" id="btn-state-thawed" class="py-3 px-4 rounded-xl border-2 transition text-center font-semibold text-sm flex flex-col items-center justify-center gap-2 bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700">
+                                        <span class="text-2xl">🌡️</span>
+                                        <span>Aufgetaut</span>
+                                        <span class="text-[10px] font-normal opacity-80">(Über Nacht im Kühlschrank)</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-sm font-semibold text-slate-300 mb-3">Wrap-Dicke</label>
+                                <div class="grid grid-cols-3 gap-2">
+                                    <button onclick="setWrapSize('thin')" id="btn-size-thin" class="py-2.5 px-3 rounded-lg border transition text-center text-xs font-semibold bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700">
+                                        Schlank (Ei-Muffins)
+                                    </button>
+                                    <button onclick="setWrapSize('normal')" id="btn-size-normal" class="py-2.5 px-3 rounded-lg border-2 transition text-center text-xs font-semibold bg-orange-500/10 border-orange-500 text-orange-400">
+                                        Standard Wrap
+                                    </button>
+                                    <button onclick="setWrapSize('thick')" id="btn-size-thick" class="py-2.5 px-3 rounded-lg border transition text-center text-xs font-semibold bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700">
+                                        XL Jumbo Wrap
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Outputs -->
+                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 flex flex-col justify-between">
+                            <div class="space-y-4">
+                                <h3 class="text-md font-bold text-slate-400 uppercase tracking-wider">Optimale Einstellungen</h3>
+                                <div class="grid grid-cols-2 gap-4">
+                                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-850 text-center">
+                                        <span class="text-xs text-slate-400 block mb-1">🔥 Temperatur</span>
+                                        <span id="output-temp" class="text-3xl font-extrabold text-orange-400">180°C</span>
+                                    </div>
+                                    <div class="bg-slate-950 p-4 rounded-xl border border-slate-850 text-center">
+                                        <span class="text-xs text-slate-400 block mb-1">⏱️ Empf. Zeit</span>
+                                        <span id="output-time" class="text-3xl font-extrabold text-amber-400">8 Min</span>
+                                    </div>
+                                </div>
+                                <div class="p-3 bg-amber-500/5 rounded-lg border border-amber-500/10 text-xs text-amber-300 leading-relaxed">
+                                    <strong class="block mb-1">💡 Airfryer Pro-Tipp:</strong>
+                                    Heize den Airfryer kurz 2 Min vor. Lege den Wrap mit der Naht nach unten hinein. Nach der Hälfte der Zeit einmal wenden!
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Custom Timer Widget -->
+                        <div class="bg-slate-900 rounded-xl p-6 border border-slate-800 flex flex-col justify-center items-center text-center">
+                            <h3 class="text-sm font-bold text-slate-400 uppercase tracking-wider mb-4">Morgen-Timer starten</h3>
+                            <div class="relative w-32 h-32 flex items-center justify-center">
+                                <svg class="absolute inset-0 w-full h-full transform -rotate-90">
+                                    <circle cx="64" cy="64" r="58" class="stroke-slate-800" stroke-width="6" fill="transparent"/>
+                                    <circle id="timer-progress" cx="64" cy="64" r="58" class="stroke-orange-500 transition-all duration-1000" stroke-width="6" fill="transparent" stroke-dasharray="364.4" stroke-dashoffset="0"/>
+                                </svg>
+                                <span id="timer-display" class="text-3xl font-extrabold text-white">08:00</span>
+                            </div>
+                            <div class="mt-4 flex space-x-2">
+                                <button onclick="toggleTimer()" id="btn-timer-start" class="px-4 py-2 bg-orange-500 hover:bg-orange-600 text-white font-semibold text-xs rounded-lg transition">Start</button>
+                                <button onclick="resetTimer()" class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-400 font-semibold text-xs rounded-lg transition">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recipes Section -->
+        <section id="recipes" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+                <div>
+                    <h2 class="text-3xl md:text-4xl font-extrabold text-white">
+                        🎯 Die 20 gottlosen Protein-Rezepte
+                    </h2>
+                    <p class="text-slate-400 mt-2">Filter nach deiner Lieblingsprotein-Quelle. Alle Rezepte sind absolut bohnenfrei.</p>
+                </div>
+                <!-- Category Filter -->
+                <div class="mt-6 md:mt-0 flex flex-wrap gap-2" id="filter-container">
+                    <button onclick="filterRecipes('all')" class="filter-btn px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg text-xs transition">Alle</button>
+                    <button onclick="filterRecipes('chicken')" class="filter-btn px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-xs transition">Hähnchen</button>
+                    <button onclick="filterRecipes('beef')" class="filter-btn px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-xs transition">Rind</button>
+                    <button onclick="filterRecipes('eggs-veggie')" class="filter-btn px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-xs transition">Ei & Veggie</button>
+                    <button onclick="filterRecipes('other')" class="filter-btn px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-xs transition">Pizza & Co</button>
+                </div>
+            </div>
+
+            <!-- Recipes Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="recipes-grid">
+                <!-- Javascript will render 20 recipes here dynamically -->
+            </div>
+        </section>
+
+        <!-- Bulk Prep Shopping List Section -->
+        <section id="shopping" class="py-16 bg-slate-950 border-t border-slate-800">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto mb-12">
+                    <h2 class="text-3xl font-extrabold text-white">🛒 Einkaufszettel-Konfigurator</h2>
+                    <p class="text-slate-400 mt-2">Kombiniere mehrere Rezepte und wähle die Portionen. Wir rechnen alles zusammen und sortieren es übersichtlich nach Supermarkt-Abteilungen!</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Configurator Left -->
+                    <div class="lg:col-span-1 bg-slate-900 border border-slate-800 rounded-2xl p-6 h-fit">
+                        <h3 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
+                            <span>🛠️</span> Meal-Prep Korb
+                        </h3>
+                        
+                        <div class="space-y-4">
+                            <!-- Add Recipe to Cart -->
+                            <div>
+                                <label class="block text-xs font-semibold text-slate-400 uppercase tracking-wider mb-2">Rezept hinzufügen</label>
+                                <div class="flex gap-2">
+                                    <select id="add-recipe-select" class="flex-grow bg-slate-950 border border-slate-800 rounded-lg p-2.5 text-slate-300 text-sm focus:border-orange-500 focus:outline-none">
+                                        <!-- Populated dynamically -->
+                                    </select>
+                                    <button onclick="addRecipeToCart()" class="bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 rounded-lg font-bold transition flex items-center justify-center shrink-0" title="Hinzufügen">
+                                        ➕
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic Cart Items -->
+                            <div id="cart-items-container" class="space-y-3 pt-2">
+                                <!-- Cart items injected here -->
+                            </div>
+
+                            <div class="p-4 bg-orange-500/5 border border-orange-500/10 rounded-xl mt-4">
+                                <span class="text-xs text-orange-400 font-semibold block mb-1">Vorratsschätzung gesamt:</span>
+                                <p class="text-xs text-slate-400" id="duration-estimate">
+                                    Füge Rezepte hinzu, um deinen Vorrat zu berechnen.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Consolidated Shopping List Right -->
+                    <div class="lg:col-span-2 bg-slate-900 border border-slate-800 rounded-2xl p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-800">
+                                <h3 class="text-lg font-bold text-white flex items-center gap-2">
+                                    <span>📝</span> Dein gesammelter Einkaufszettel
+                                </h3>
+                                <button onclick="copyShoppingList()" class="text-xs bg-slate-850 hover:bg-slate-800 text-slate-300 border border-slate-700 px-3 py-1.5 rounded-lg transition flex items-center gap-1.5">
+                                    <span>📋</span> Kopieren
+                                </button>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4" id="shopping-list-categories">
+                                <!-- Categorized list generated here -->
+                            </div>
+                        </div>
+
+                        <div class="mt-8 pt-4 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-4">
+                            <p>Pro-Tipp: Hak' ab, was du schon im Wagen hast.</p>
+                            <span class="text-[10px] bg-slate-950 px-2 py-1 rounded text-slate-500">Mengen für Kombi-Zutaten werden automatisch addiert.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 2-Month Prep Guide Section -->
+        <section id="guide" class="py-16 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-br from-slate-900 to-slate-950 border border-slate-800 rounded-3xl p-8 relative overflow-hidden">
+                <div class="absolute -bottom-8 -right-8 w-48 h-48 bg-orange-500/10 rounded-full blur-3xl"></div>
+                
+                <h2 class="text-2xl md:text-3xl font-extrabold text-white mb-6 flex items-center gap-2">
+                    <span>🧊</span> Das 2-Monate Gefrierschrank-Handbuch
+                </h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm">1</div>
+                        <h3 class="text-md font-bold text-white">Masse komplett abkühlen lassen!</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Fülle niemals warmes Fleisch oder Eier in den Wrap. Durch den Dampf weicht das Tortilla sofort durch und gefriert zu einem matschigen Eisklotz.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm">2</div>
+                        <h3 class="text-md font-bold text-white">Käse als "Feuchtigkeitssperre"</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Streue immer zuerst eine dünne Schicht geriebenen Käse auf den Wrap, bevor du die Sauce oder das Fleisch hinzugibst. Der Käse verhindert ein Durchweichen.</p>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="w-8 h-8 rounded-lg bg-orange-500/20 text-orange-400 flex items-center justify-center font-bold text-sm">3</div>
+                        <h3 class="text-md font-bold text-white">Der Alufolie/Backpapier Trick</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Rolle jeden Wrap stramm in Backpapier oder Alufolie ein. Packe alle Wraps zusammen in einen Gefrierbeutel. So verhinderst du jeglichen Gefrierbrand!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-xs text-slate-500">
+        <p class="mb-2">CRISP & PREP - Keine Ausreden mehr am Morgen. Knusprig in den Tag.</p>
+        <p>&copy; 2026 Crisp & Prep Co. Alle Rechte vorbehalten.</p>
+    </footer>
+
+    <!-- Recipe Detail Modal -->
+    <div id="recipe-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-sm">
+        <div class="bg-slate-900 border border-slate-800 rounded-2xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
+            <div class="p-6 md:p-8">
+                <div class="flex items-start justify-between mb-4">
+                    <h3 id="modal-title" class="text-2xl md:text-3xl font-extrabold text-white">Rezept Name</h3>
+                    <button onclick="closeModal()" class="w-8 h-8 bg-slate-800 hover:bg-slate-700 text-slate-400 hover:text-white rounded-full flex items-center justify-center font-bold">×</button>
+                </div>
+                
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6">
+                    <div class="flex flex-wrap gap-2" id="modal-tags">
+                        <!-- Dynamic badges -->
+                    </div>
+                    
+                    <!-- NEW PORTION CONTROL -->
+                    <div class="flex items-center space-x-2 bg-slate-950 p-1.5 rounded-lg border border-slate-800 shrink-0">
+                        <span class="text-xs text-slate-400 font-semibold px-2">Portionen:</span>
+                        <button onclick="adjustModalPortions(-1)" class="w-8 h-8 bg-slate-800 hover:bg-slate-700 rounded text-white font-bold transition">-</button>
+                        <input type="number" id="modal-portions-input" value="1" min="1" max="100" onchange="setModalPortions(this.value)" class="w-10 bg-transparent text-center font-bold text-white text-sm focus:outline-none">
+                        <button onclick="adjustModalPortions(1)" class="w-8 h-8 bg-slate-800 hover:bg-slate-700 rounded text-white font-bold transition">+</button>
+                    </div>
+                </div>
+
+                <!-- Nutrition Info -->
+                <div class="grid grid-cols-4 gap-2.5 p-4 bg-slate-950 rounded-xl border border-slate-800 text-center mb-6">
+                    <div>
+                        <span class="text-[10px] text-slate-400 block">Kalorien</span>
+                        <span id="modal-kcal" class="text-sm font-extrabold text-white">~450 kcal</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-400 block">Protein</span>
+                        <span id="modal-protein" class="text-sm font-extrabold text-orange-400">~35g</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-400 block">Kohlenhydrate</span>
+                        <span id="modal-carbs" class="text-sm font-extrabold text-blue-400">~42g</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] text-slate-400 block">Fett</span>
+                        <span id="modal-fat" class="text-sm font-extrabold text-emerald-400">~12g</span>
+                    </div>
+                </div>
+
+                <!-- Ingredients -->
+                <div class="mb-6">
+                    <h4 id="modal-ingredients-title" class="text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">Zutaten für 1 Wrap</h4>
+                    <ul id="modal-ingredients" class="space-y-1.5 text-sm text-slate-400 list-disc list-inside">
+                        <!-- Dynamic list -->
+                    </ul>
+                </div>
+
+                <!-- Step-by-Step -->
+                <div>
+                    <h4 class="text-sm font-bold uppercase tracking-wider text-slate-300 mb-3">Zubereitung & Meal Prep</h4>
+                    <ol id="modal-steps" class="space-y-3 text-sm text-slate-400 list-decimal list-inside leading-relaxed">
+                        <!-- Dynamic list -->
+                    </ol>
+                </div>
+
+                <!-- Airfryer Guideline -->
+                <div class="mt-8 p-4 bg-orange-500/10 border border-orange-500/20 rounded-xl">
+                    <h5 class="text-xs font-bold text-orange-400 uppercase tracking-wider mb-2">🔥 Airfryer-Spezial: Aufwärmen</h5>
+                    <p class="text-xs text-slate-300 leading-relaxed" id="modal-airfryer-tip">
+                        Gefroren bei 180°C für ca. 8-10 Minuten in den Korb legen. Nach der Hälfte wenden für die ultimative Kruste!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Application Logic Script -->
+    <script>
+        // --- NEW: PWA Manifest Setup for Android App Installation ---
+        const manifest = {
+            "name": "CRISP & PREP - Meal Prep",
+            "short_name": "CrispPrep",
+            "start_url": ".",
+            "display": "standalone",
+            "background_color": "#020617",
+            "theme_color": "#f97316",
+            "description": "Dein Airfryer Wrap Planer",
+            "icons": [
+                {
+                    "src": "https://placehold.co/192x192/f97316/ffffff?text=C%2BP",
+                    "sizes": "192x192",
+                    "type": "image/png"
+                },
+                {
+                    "src": "https://placehold.co/512x512/f97316/ffffff?text=C%2BP",
+                    "sizes": "512x512",
+                    "type": "image/png"
+                }
+            ]
+        };
+        const stringManifest = JSON.stringify(manifest);
+        const blob = new Blob([stringManifest], {type: 'application/json'});
+        const manifestURL = URL.createObjectURL(blob);
+        document.querySelector('head').insertAdjacentHTML('beforeend', `<link rel="manifest" href="${manifestURL}">`);
+
+        // Full database of 20 high-protein, healthy, bean-free, freezer-friendly recipes
+        const recipes = [
+            {
+                id: 1,
+                name: "Sloppy Joe Cheeseburger Wrap",
+                category: "beef",
+                kcal: 480,
+                protein: 38,
+                carbs: 35,
+                fat: 14,
+                desc: "Der würzige Vibe eines saftigen Cheeseburgers, perfekt gerollt für den Schulweg.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g mageres Rinderhackfleisch",
+                    "1/4 Gemüsezwiebel (fein gewürfelt)",
+                    "1/2 rote Paprika (fein gewürfelt)",
+                    "1 gehäufter EL Tomatenmark",
+                    "20g geriebener Light-Cheddar",
+                    "3 Gewürzgurken-Scheiben",
+                    "1 TL Gewürz-Mischung (Paprikapulver, Salz, Pfeffer)"
+                ],
+                steps: [
+                    "Das Rinderhackfleisch scharf in einer Pfanne anbraten. Zwiebeln und Paprika hinzugeben und weich dünsten.",
+                    "Tomatenmark einrühren und kurz mitrösten. Einen Schuss Wasser oder Brühe dazugeben, damit es sämig wird. Mit Salz, Pfeffer und viel Paprikapulver würzen. Einkochen lassen, bis keine flüssige Sauce mehr da ist.",
+                    "Die Masse komplett auf Zimmertemperatur abkühlen lassen.",
+                    "Den Wrap bereitlegen. Zuerst den geriebenen Cheddar darauf verteilen (das schützt vor dem Durchweichen).",
+                    "Das abgekühlte Hackfleisch und die Gewürzgurkenscheiben drauflegen. Seitlich einklappen, fest zusammenrollen.",
+                    "Stramm in Alufolie oder Backpapier wickeln und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 2,
+                name: "BBQ Chicken & Bacon Crunch",
+                category: "chicken",
+                kcal: 460,
+                protein: 41,
+                carbs: 38,
+                fat: 11,
+                desc: "Rauchig, süß-würzig und vollgepackt mit magerem Hähnchen und Bacon-Schinken.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g Hähnchenbrustfilet (in Mini-Würfel geschnitten)",
+                    "15g magere Schinkenwürfel (Bacon-Ersatz)",
+                    "2 EL Mais (gut abgetropft)",
+                    "1/2 EL BBQ-Sauce (zuckerreduziert)",
+                    "25g geriebener Light-Gouda",
+                    "Etwas geräuchertes Paprikapulver"
+                ],
+                steps: [
+                    "Die Schinkenwürfel fettfrei in der Pfanne knusprig braten. Hähnchenbrust dazugeben und rundherum durchbraten.",
+                    "Die BBQ-Sauce und die Gewürze dazugeben und kurz durchschwenken, sodass das Fleisch schön glasiert ist. Mais unterheben.",
+                    "Die Masse komplett abkühlen lassen.",
+                    "Wrap mit Käse bestreuen, die Chicken-Mischung darauf verteilen und fest einrollen.",
+                    "Wickeln, beschriften und ab in den Gefrierschrank."
+                ],
+                airfryer: "Gefroren: 180°C für 9 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 3,
+                name: "Schinken-Ei Breakfast-Burrito",
+                category: "eggs-veggie",
+                kcal: 410,
+                protein: 34,
+                carbs: 32,
+                fat: 13,
+                desc: "Das Ei bleibt durch den geschmolzenen Hüttenkäse unfassbar saftig im Airfryer.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "2 Eier + 1 Eiweiß",
+                    "20g magere Schinkenwürfel (oder Putenbruststreifen)",
+                    "2 EL Körniger Frischkäse (Hüttenkäse light)",
+                    "Eine Handvoll Babyspinat",
+                    "Prise Salz, Pfeffer & Muskatnuss"
+                ],
+                steps: [
+                    "Schinkenwürfel in der Pfanne kurz anbraten.",
+                    "Eier mit dem Hüttenkäse verquirlen, mit Salz und Pfeffer würzen.",
+                    "Eimasse in die Pfanne geben und bei mittlerer Hitze zu einem saftigen Rührei stocken lassen (nicht zu trocken braten!). Am Schluss den Spinat unterheben, bis er zusammenfällt.",
+                    "Komplett abkühlen lassen.",
+                    "Die Rührei-Mischung in die Mitte des Wraps geben, einrollen und verpacken."
+                ],
+                airfryer: "Gefroren: 175°C für 7 Minuten. Aufgetaut: 180°C für 4 Minuten."
+            },
+            {
+                id: 4,
+                name: "Dürüm-Style Knoblauch-Hähnchen",
+                category: "chicken",
+                kcal: 440,
+                protein: 42,
+                carbs: 34,
+                fat: 10,
+                desc: "Dein gesunder Döner-Ersatz. Herzhaft gewürzt mit Feta und leichtem Knoblauchquark.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "120g Hähnchenbrust (in feinen Streifen)",
+                    "1 TL Gyrosgewürz",
+                    "1 EL Kräuterquark light (Tzatziki-Style)",
+                    "20g Fetakäse light (zerbröselt)",
+                    "Dünne Streifen Eisbergsalat"
+                ],
+                steps: [
+                    "Das Hähnchenfleisch scharf mit dem Gyrosgewürz anbraten und abkühlen lassen.",
+                    "Den Wrap dünn mit dem Kräuterquark bestreichen.",
+                    "Die Hähnchenstreifen, den Feta und den Eisbergsalat darauf verteilen.",
+                    "Extrem stramm einrollen, damit der Salat kompakt bleibt. Sofort einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 5,
+                name: "Sweet Chili Chicken & Rice",
+                category: "chicken",
+                kcal: 490,
+                protein: 39,
+                carbs: 48,
+                fat: 9,
+                desc: "Der Asien-Vibe. Der Reis saugt die Sauce perfekt auf – kein Kleckern unterwegs!",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "90g Hähnchenbrust (gewürfelt)",
+                    "20g Reis (ungekocht gewogen - kochen und abkühlen lassen!)",
+                    "1 EL Sweet Chili Sauce (zuckerreduziert)",
+                    "1/4 Paprika (fein gewürfelt)",
+                    "20g geriebener Light-Käse"
+                ],
+                steps: [
+                    "Hähnchen und Paprikawürfel anbraten, mit Sweet-Chili-Sauce mischen.",
+                    "Den abgekühlten Reis mit der Hähnchen-Masse vermengen (der Reis bindet alle Sauce).",
+                    "Alles komplett abkühlen lassen.",
+                    "Mit Käse in den Wrap einrollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 10 Minuten. Aufgetaut: 180°C für 6 Minuten."
+            },
+            {
+                id: 6,
+                name: "Sucuk & Egg Power Wrap",
+                category: "eggs-veggie",
+                kcal: 470,
+                protein: 35,
+                carbs: 33,
+                fat: 18,
+                desc: "Kräftige Sucuk-Wurst und Rührei – die ultimative herzhafte Kombi für den Kick am Morgen.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "2 Eier",
+                    "30g Sucuk (in feine Würfel oder dünne Scheiben)",
+                    "1 EL Hüttenkäse light",
+                    "25g geriebener Mozzarella (light)",
+                    "1 Prise Paprika edelsüß"
+                ],
+                steps: [
+                    "Sucuk-Scheiben in der Pfanne ohne zusätzliches Fett von beiden Seiten anbraten, bis sie leicht knusprig sind.",
+                    "Eier mit Hüttenkäse verquirlen, in die Pfanne zur Sucuk geben und ein cremiges Rührei braten. Abkühlen lassen.",
+                    "Den Wrap erst mit Mozzarella belegen, dann die Sucuk-Ei-Mischung daraufgeben, einrollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 4 Minuten."
+            },
+            {
+                id: 7,
+                name: "Philly Cheesesteak Wrap",
+                category: "beef",
+                kcal: 495,
+                protein: 41,
+                carbs: 34,
+                fat: 15,
+                desc: "Zartes Rindfleisch mit karamellisierten Zwiebeln und brutal cremigem, geschmolzenem Käse.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g mageres Rindfleisch (sehr dünne Streifen, z.B. Rinderhüfte)",
+                    "1/2 Zwiebel (in dünnen Ringen)",
+                    "1/4 grüne Paprika (in dünnen Streifen)",
+                    "1 Scheibe Schmelzkäse (light) oder 25g Cheddar-Light",
+                    "Salz & Pfeffer"
+                ],
+                steps: [
+                    "Zwiebeln und Paprika bei mittlerer Hitze in der Pfanne langsam karamellisieren lassen. Aus der Pfanne nehmen.",
+                    "Die Rindfleischstreifen in derselben Pfanne extrem heiß und kurz scharf anbraten. Mit Salz und Pfeffer würzen.",
+                    "Alles komplett abkühlen lassen.",
+                    "Wrap mit Käse, Gemüse und Rindfleisch belegen, stramm rollen und ab ins Eisfach."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 185°C für 4 Minuten."
+            },
+            {
+                id: 8,
+                name: "Teriyaki Beef & Broccoli",
+                category: "beef",
+                kcal: 460,
+                protein: 38,
+                carbs: 42,
+                fat: 10,
+                desc: "Würziger Asia-Stil mit mundgerechten Brokkoliröschen und cremig-süßem Teriyaki-Rindfleisch.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g Rinderhack oder magere Rindfleischstreifen",
+                    "40g Brokkoliröschen (sehr fein gehackt, blanchiert)",
+                    "1 EL Teriyakisauce (dickflüssig)",
+                    "1/2 TL Sesam",
+                    "20g geriebener Light-Gouda"
+                ],
+                steps: [
+                    "Das Rindfleisch anbraten, fein gehackten Brokkoli hinzugeben.",
+                    "Mit Teriyakisauce ablöschen und einkochen lassen, bis keine flüssige Sauce mehr in der Pfanne steht. Mit Sesam bestreuen. Abkühlen lassen.",
+                    "Mit Käse auf den Wrap geben, einrollen, verpacken und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 9 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 9,
+                name: "Tuna-Melt Supreme Wrap",
+                category: "other",
+                kcal: 430,
+                protein: 43,
+                carbs: 31,
+                fat: 11,
+                desc: "Saftiger Thunfisch mit schmelzendem Cheddar und feinen Gurkenwürfeln.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g Thunfisch (im eigenen Saft, extrem gut ausgedrückt!)",
+                    "1 EL saure Sahne oder Frischkäse light (10% Fett)",
+                    "2 Gewürzgurken (fein gewürfelt)",
+                    "30g geriebener Light-Cheddar",
+                    "Salz, schwarzer Pfeffer, Spritzer Zitrone"
+                ],
+                steps: [
+                    "Den Thunfisch mit Frischkäse/saurer Sahne, Gewürzgurkenwürfeln und Gewürzen zu einer festen Creme verrühren.",
+                    "Den Wrap mit Cheddar belegen, die Thunfischcreme flach darauf verstreichen.",
+                    "Fest rollen, in Backpapier verpacken und einfrieren."
+                ],
+                airfryer: "Gefroren: 175°C für 9 Minuten. Aufgetaut: 180°C für 4,5 Minuten."
+            },
+            {
+                id: 10,
+                name: "Pizza-Protein-Tasche",
+                category: "other",
+                kcal: 440,
+                protein: 36,
+                carbs: 35,
+                fat: 12,
+                desc: "Schmeckt wie eine Calzone. Der Wrap wird im Airfryer zur knusprigen Pizza-Kruste.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "2 EL passierte Tomaten (mit Oregano, Salz, Knoblauch gewürzt)",
+                    "50g Puten-Salami oder Putenbruststreifen",
+                    "40g geriebener Mozzarella (light)",
+                    "1/4 Paprika (fein gewürfelt)",
+                    "Prise Pizzagewürz"
+                ],
+                steps: [
+                    "Die passierten Tomaten gut mit den Kräutern würzen.",
+                    "Den Wrap dünn mit der Tomatensauce bestreichen (nicht zu dick!).",
+                    "Mit Käse, Puten-Salami und feinen Paprikawürfeln belegen.",
+                    "Zu einer quadratischen Tasche falten (Seiten einklappen und oben/unten umschlagen), damit die Sauce nicht ausläuft. Einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 7 Minuten. Aufgetaut: 185°C für 4 Minuten."
+            },
+            {
+                id: 11,
+                name: "Buffalo Chicken Ranch Wrap",
+                category: "chicken",
+                kcal: 450,
+                protein: 40,
+                carbs: 34,
+                fat: 11,
+                desc: "Leicht scharfes Buffalo-Hähnchen abgerundet mit cremigem Kräuterdressing.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "110g Hähnchenbrust (gewürfelt)",
+                    "1/2 EL scharfe Chilisauce (z.B. Frank's RedHot)",
+                    "1 EL Joghurt-Ranch-Dressing (fettarm)",
+                    "20g Sellerie oder Frühlingszwiebel (fein gehackt)",
+                    "20g geriebener Light-Gouda"
+                ],
+                steps: [
+                    "Hähnchenbrust scharf anbraten, mit der scharfen Chilisauce glasieren und abkühlen lassen.",
+                    "Den Wrap mit Ranch-Dressing bestreichen, Hähnchen, fein gehackten Sellerie/Frühlingszwiebeln und Käse dazugeben.",
+                    "Fest einrollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 12,
+                name: "Griechischer Souvlaki-Wrap",
+                category: "chicken",
+                kcal: 430,
+                protein: 39,
+                carbs: 34,
+                fat: 11,
+                desc: "Zitronig-mediterranes Geflügel mit cremigem Tzatziki und Feta.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "110g Hähnchenbrust (in Streifen)",
+                    "1 TL Kräuter der Provence, Spritzer Zitronensaft",
+                    "1 EL Tzatziki light",
+                    "25g Fetakäse light",
+                    "3 Scheiben Gurke (fein gewürfelt)"
+                ],
+                steps: [
+                    "Hähnchenbrust mit Kräutern, Salz, Pfeffer und Zitronensaft marinieren und scharf braten. Abkühlen lassen.",
+                    "Wrap mit Tzatziki bestreichen, abgekühltes Fleisch, Feta-Brösel und Gurken darauf verteilen.",
+                    "Sehr stramm einrollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 175°C für 8 Minuten. Aufgetaut: 180°C für 4 Minuten."
+            },
+            {
+                id: 13,
+                name: "Creamy Carbonara Chicken Wrap",
+                category: "chicken",
+                kcal: 480,
+                protein: 42,
+                carbs: 33,
+                fat: 14,
+                desc: "Dein Pasta-Traum als handlicher Wrap. Super cremig durch Frischkäse und mageren Schinken.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g Hähnchenbrustfilet (in Streifen)",
+                    "15g magerer Schinken (gewürfelt)",
+                    "1 gehäufter EL Frischkäse light (z.B. 4% Fett)",
+                    "20g geriebener Parmesan oder Grana Padano",
+                    "Prise Knoblauchpulver, Salz & viel schwarzer Pfeffer"
+                ],
+                steps: [
+                    "Schinken in der Pfanne knusprig braten. Hähnchen dazugeben und fertig braten.",
+                    "Frischkäse, Parmesan und Gewürze direkt in die warme Pfanne geben und einrühren, bis eine dicke Sauce das Fleisch umschließt. Absolut abkühlen lassen!",
+                    "Die cremige Masse auf den Wrap geben, rollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 4,5 Minuten."
+            },
+            {
+                id: 14,
+                name: "Fajita Turkey & Bell Pepper",
+                category: "chicken",
+                kcal: 420,
+                protein: 37,
+                carbs: 35,
+                fat: 9,
+                desc: "Zarte Putenbrust mit gebratenen Paprika- und Zwiebelstreifen im Tex-Mex Stil.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g Putenbrustfilet (in Streifen)",
+                    "1/2 Paprika (gelb oder rot, in feinen Streifen)",
+                    "1/4 Zwiebel (in dünnen Streifen)",
+                    "1 TL Fajita-Gewürzmischung (Kreuzkümmel, Paprika, Knoblauch)",
+                    "20g geriebener Light-Käse"
+                ],
+                steps: [
+                    "Putenbrust mit Paprika und Zwiebeln scharf in der Pfanne anbraten, mit Fajita-Gewürz würzen. Komplett abkühlen lassen.",
+                    "Erst den Käse auf den Wrap geben, dann das Fajita-Gemüse-Fleisch darauflegen.",
+                    "Einrollen, verpacken und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 9 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 15,
+                name: "BBQ Pulled Chicken Wrap",
+                category: "chicken",
+                kcal: 440,
+                protein: 41,
+                carbs: 37,
+                fat: 8,
+                desc: "Zartes, gezupftes Hähnchenfleisch in einer rauchigen Barbecue-Sauce mit knackigem Mais.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "120g fertig gegarte Hähnchenbrust (mit zwei Gabeln gezupft)",
+                    "1 EL BBQ-Sauce zuckerreduziert",
+                    "2 EL Mais (gut abgewaschen)",
+                    "20g geriebener Light-Mozzarella"
+                ],
+                steps: [
+                    "Das gezupfte Hähnchenfleisch mit der BBQ-Sauce und dem Mais gut vermischen.",
+                    "Den Wrap mit Käse bestreuen, das Pulled Chicken daraufgeben.",
+                    "Fest rollen, in Alufolie packen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 4,5 Minuten."
+            },
+            {
+                id: 16,
+                name: "Golden Curry Chicken Wrap",
+                category: "chicken",
+                kcal: 450,
+                protein: 39,
+                carbs: 40,
+                fat: 10,
+                desc: "Sanfter Curry-Vibe mit fruchtiger Note und super saftigem Hähnchen.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g Hähnchenbrust (gewürfelt)",
+                    "1/2 EL Frischkäse light + 1/2 TL Currypulver",
+                    "10g getrocknete Cranberries oder Rosinen (fein gehackt für die Süße)",
+                    "1/4 Apfel (fein gewürfelt)",
+                    "20g geriebener Light-Gouda"
+                ],
+                steps: [
+                    "Hähnchen scharf anbraten und abkühlen lassen.",
+                    "Frischkäse, Currypulver, gehackte Cranberries, Apfelwürfel und abgekühltes Hähnchen in einer Schüssel gut vermengen.",
+                    "Wrap mit Käse belegen, die Curry-Masse darauf verteilen, rollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 8 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 17,
+                name: "Rauchiger Tofu Scramble Wrap",
+                category: "eggs-veggie",
+                kcal: 400,
+                protein: 28,
+                carbs: 32,
+                fat: 12,
+                desc: "Der vegane/vegetarische Champion. Räuchertofu sorgt für herzhaften Speck-Geschmack.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "80g Räuchertofu (sehr fein zerbröselt)",
+                    "1 Ei (oder 50g Seidentofu für komplett vegan)",
+                    "1/4 Paprika (fein gewürfelt)",
+                    "Salz, Pfeffer, etwas Kurkuma (für die gelbe Farbe)"
+                ],
+                steps: [
+                    "Den fein zerbröselten Räuchertofu in einer Pfanne kräftig anbraten, bis er leicht knusprig wird. Paprikawürfel hinzugeben.",
+                    "Das Ei (oder Seidentofu) hinzugeben, mit Kurkuma, Salz und Pfeffer würzen und ein herzhaftes Scramble braten. Abkühlen lassen.",
+                    "In den Wrap rollen, verpacken und ab ins Eisfach."
+                ],
+                airfryer: "Gefroren: 175°C für 8 Minuten. Aufgetaut: 180°C für 4 Minuten."
+            },
+            {
+                id: 18,
+                name: "Chili-Cheese Beef Wrap",
+                category: "beef",
+                kcal: 490,
+                protein: 40,
+                carbs: 35,
+                fat: 14,
+                desc: "Schmeckt wie die legendären Chili-Cheese-Nuggets, nur gesund und proteinreich.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "100g mageres Rinderhack",
+                    "1 EL Frischkäse light",
+                    "1/2 Jalapeno (in feinen Scheiben, oder milde Peperoni)",
+                    "30g geriebener Cheddar-Light",
+                    "Prise Chilipulver, Salz, Pfeffer"
+                ],
+                steps: [
+                    "Das Rinderhack kräftig anbraten. Mit Salz, Pfeffer und Chilipulver würzen. Abkühlen lassen.",
+                    "Den Frischkäse mit den feinen Jalapeno-Scheiben und dem Cheddar vermischen.",
+                    "Die Käse-Chili-Mischung auf den Wrap streichen, das abgekühlte Fleisch darauf verteilen, einrollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 9 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 19,
+                name: "Crispy Fish-Melt Wrap",
+                category: "other",
+                kcal: 450,
+                protein: 34,
+                carbs: 45,
+                fat: 11,
+                desc: "Knuspriges Fischfilet mit leichter Remoulade und geschmolzenem Gouda.",
+                ingredients: [
+                    "1 Protein-Wrap",
+                    "1 Schlemmer-Fischfilet (oder 2-3 Fischstäbchen, vorab im Backofen gebacken)",
+                    "1 TL Remoulade light oder Kräuterquark",
+                    "20g geriebener Light-Gouda",
+                    "2 Scheiben Gewürzgurke"
+                ],
+                steps: [
+                    "Das Fischfilet/die Fischstäbchen komplett fertig garen und komplett abkühlen lassen.",
+                    "Den Wrap mit Remoulade bestreichen.",
+                    "Das kalte Fischfilet (leicht zerdrückt), Gewürzgurken und Käse daraufgeben.",
+                    "Eng zusammenrollen und einfrieren."
+                ],
+                airfryer: "Gefroren: 180°C für 9 Minuten. Aufgetaut: 180°C für 5 Minuten."
+            },
+            {
+                id: 20,
+                name: "Pizza-Protein-Waffeln (4er Set)",
+                category: "other",
+                kcal: 420,
+                protein: 38,
+                carbs: 30,
+                fat: 12,
+                desc: "Die geniale Alternative zum Wrap. Backe herzhafte Waffeln, die du gefroren einfach in den Toaster wirfst!",
+                ingredients: [
+                    "60g Magerquark (Teigbasis)",
+                    "1 Ei",
+                    "25g zarte Haferflocken (gemahlen)",
+                    "25g magere Schinkenwürfel",
+                    "25g geriebener Light-Käse",
+                    "1/2 TL Backpulver, Oregano, Salz, Pfeffer"
+                ],
+                steps: [
+                    "Alle Zutaten (Magerquark, Ei, Haferflocken, Schinken, Käse und Gewürze) in einer Schüssel zu einem dicken Teig verrühren.",
+                    "Ein Waffeleisen vorheizen und leicht einfetten. Den Teig darin knusprig ausbacken.",
+                    "Die Waffeln komplett abkühlen lassen.",
+                    "Einzeln einfrieren. Morgens gefroren einfach für 2 Minuten in den Toaster oder Airfryer stecken!"
+                ],
+                airfryer: "Gefroren: 180°C für 3-4 Minuten. (Toaster: Stufe 3-4)"
+            }
+        ];
+
+        // UI State
+        let selectedState = 'frozen'; // 'frozen' or 'thawed'
+        let selectedSize = 'normal'; // 'thin', 'normal', 'thick'
+        let currentFilter = 'all';
+        
+        // Neu: Warenkorb für Meal Prep
+        let shoppingCart = [{ id: 1, portions: 10 }]; 
+
+        let currentModalRecipeId = null;
+        let currentModalPortions = 1;
+
+        // Timer State
+        let timerSeconds = 480; // 8 minutes
+        let timerInterval = null;
+        let timerRunning = false;
+
+        // Initialize the Web App
+        window.onload = function() {
+            renderRecipes();
+            populateRecipeSelect();
+            renderCartUI();
+            calculateAirfryerSettings();
+        };
+
+        // Render recipes in grid
+        function renderRecipes() {
+            const grid = document.getElementById('recipes-grid');
+            grid.innerHTML = '';
+
+            const filtered = recipes.filter(r => {
+                if (currentFilter === 'all') return true;
+                return r.category === currentFilter;
+            });
+
+            filtered.forEach(recipe => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden shadow-lg transition hover:border-orange-500/40 hover:-translate-y-1 flex flex-col justify-between";
+                
+                let categoryBadge = "";
+                if(recipe.category === 'chicken') categoryBadge = "🐔 Hähnchen";
+                else if(recipe.category === 'beef') categoryBadge = "🐮 Rind";
+                else if(recipe.category === 'eggs-veggie') categoryBadge = "🍳 Ei & Veggie";
+                else categoryBadge = "🍕 Pizza & Co";
+
+                card.innerHTML = `
+                    <div class="p-6">
+                        <div class="flex justify-between items-start mb-3">
+                            <span class="text-[10px] uppercase font-extrabold tracking-wider bg-slate-900 border border-slate-800 text-slate-400 px-2 py-1 rounded">
+                                ${categoryBadge}
+                            </span>
+                            <span class="text-xs font-bold text-orange-400">🔥 ~${recipe.protein}g Protein</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-2">${recipe.name}</h3>
+                        <p class="text-xs text-slate-400 mb-4 line-clamp-2">${recipe.desc}</p>
+                        
+                        <div class="flex items-center space-x-4 text-xs text-slate-500 border-t border-slate-900 pt-3">
+                            <span>🔥 ${recipe.kcal} kcal</span>
+                            <span>🥖 Bohnenfrei</span>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0">
+                        <button onclick="openModal(${recipe.id})" class="w-full py-2.5 bg-slate-900 hover:bg-slate-855 text-slate-300 hover:text-white border border-slate-800 rounded-xl text-xs font-semibold transition">
+                            Rezept & Prep ansehen
+                        </button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // Filter recipes
+        function filterRecipes(category) {
+            currentFilter = category;
+            
+            // Update active button state
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.className = "filter-btn px-4 py-2 bg-slate-800 text-slate-300 hover:bg-slate-700 font-semibold rounded-lg text-xs transition";
+            });
+
+            event.target.className = "filter-btn px-4 py-2 bg-orange-500 text-white font-semibold rounded-lg text-xs transition";
+            renderRecipes();
+        }
+
+        // Populating Select Box
+        function populateRecipeSelect() {
+            const select = document.getElementById('add-recipe-select');
+            select.innerHTML = '';
+            recipes.forEach(recipe => {
+                const opt = document.createElement('option');
+                opt.value = recipe.id;
+                opt.textContent = recipe.name;
+                select.appendChild(opt);
+            });
+        }
+
+        // Change Airfryer input state
+        function setWrapState(state) {
+            selectedState = state;
+            const frozenBtn = document.getElementById('btn-state-frozen');
+            const thawedBtn = document.getElementById('btn-state-thawed');
+
+            if(state === 'frozen') {
+                frozenBtn.className = "py-3 px-4 rounded-xl border-2 transition text-center font-semibold text-sm flex flex-col items-center justify-center gap-2 bg-orange-500/10 border-orange-500 text-orange-400";
+                thawedBtn.className = "py-3 px-4 rounded-xl border-2 transition text-center font-semibold text-sm flex flex-col items-center justify-center gap-2 bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700";
+            } else {
+                thawedBtn.className = "py-3 px-4 rounded-xl border-2 transition text-center font-semibold text-sm flex flex-col items-center justify-center gap-2 bg-orange-500/10 border-orange-500 text-orange-400";
+                frozenBtn.className = "py-3 px-4 rounded-xl border-2 transition text-center font-semibold text-sm flex flex-col items-center justify-center gap-2 bg-slate-900 border-slate-800 text-slate-400 hover:border-slate-700";
+            }
+            calculateAirfryerSettings();
+        }
+
+        function setWrapSize(size) {
+            selectedSize = size;
+            const thinBtn = document.getElementById('btn-size-thin');
+            const normalBtn = document.getElementById('btn-size-normal');
+            const thickBtn = document.getElementById('btn-size-thick');
+
+            thinBtn.className = "py-2.5 px-3 rounded-lg border transition text-center text-xs font-semibold bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700";
+            normalBtn.className = "py-2.5 px-3 rounded-lg border transition text-center text-xs font-semibold bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700";
+            thickBtn.className = "py-2.5 px-3 rounded-lg border transition text-center text-xs font-semibold bg-slate-900 border-slate-800 text-slate-300 hover:border-slate-700";
+
+            if (size === 'thin') thinBtn.className = "py-2.5 px-3 rounded-lg border-2 transition text-center text-xs font-semibold bg-orange-500/10 border-orange-500 text-orange-400";
+            if (size === 'normal') normalBtn.className = "py-2.5 px-3 rounded-lg border-2 transition text-center text-xs font-semibold bg-orange-500/10 border-orange-500 text-orange-400";
+            if (size === 'thick') thickBtn.className = "py-2.5 px-3 rounded-lg border-2 transition text-center text-xs font-semibold bg-orange-500/10 border-orange-500 text-orange-400";
+
+            calculateAirfryerSettings();
+        }
+
+        // Airfryer Formula
+        function calculateAirfryerSettings() {
+            let temp = 180;
+            let time = 8; // standard frozen wrap
+
+            if (selectedState === 'frozen') {
+                temp = 180;
+                if (selectedSize === 'thin') time = 6;
+                else if (selectedSize === 'normal') time = 8;
+                else if (selectedSize === 'thick') time = 11;
+            } else { // thawed
+                temp = 185;
+                if (selectedSize === 'thin') time = 3.5;
+                else if (selectedSize === 'normal') time = 5;
+                else if (selectedSize === 'thick') time = 7;
+            }
+
+            document.getElementById('output-temp').textContent = `${temp}°C`;
+            document.getElementById('output-time').textContent = `${Math.ceil(time)} Min`;
+            
+            // Set Timer starting time
+            timerSeconds = Math.ceil(time) * 60;
+            updateTimerDisplay();
+        }
+
+        // Timer logic
+        function updateTimerDisplay() {
+            const mins = Math.floor(timerSeconds / 60);
+            const secs = timerSeconds % 60;
+            document.getElementById('timer-display').textContent = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+            
+            // Progress Bar (Total is based on original calculation)
+            const progress = document.getElementById('timer-progress');
+            let initialTime = parseInt(document.getElementById('output-time').textContent) * 60;
+            let offset = 364.4 - (364.4 * (timerSeconds / initialTime));
+            progress.setAttribute('stroke-dashoffset', isNaN(offset) ? 0 : offset);
+        }
+
+        function toggleTimer() {
+            const btn = document.getElementById('btn-timer-start');
+            if (timerRunning) {
+                clearInterval(timerInterval);
+                timerRunning = false;
+                btn.textContent = "Start";
+            } else {
+                timerRunning = true;
+                btn.textContent = "Pause";
+                timerInterval = setInterval(() => {
+                    if (timerSeconds > 0) {
+                        timerSeconds--;
+                        updateTimerDisplay();
+                    } else {
+                        clearInterval(timerInterval);
+                        timerRunning = false;
+                        btn.textContent = "Start";
+                        // Play a notification-like sound or visual toast
+                        showToast("♨️ Dein Wrap ist fertig & kross! Ab zur Schule!");
+                    }
+                }, 1000);
+            }
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            timerRunning = false;
+            document.getElementById('btn-timer-start').textContent = "Start";
+            calculateAirfryerSettings();
+        }
+
+        // --- NEW Shopping List Cart Logic ---
+
+        function addRecipeToCart() {
+            const select = document.getElementById('add-recipe-select');
+            const recipeId = parseInt(select.value);
+            
+            const existing = shoppingCart.find(item => item.id === recipeId);
+            if (existing) {
+                existing.portions += 5; // Erhöhe Portion, falls schon im Korb
+            } else {
+                shoppingCart.push({ id: recipeId, portions: 10 }); // Standard: 10 Portionen
+            }
+            renderCartUI();
+        }
+
+        function removeRecipeFromCart(id) {
+            shoppingCart = shoppingCart.filter(item => item.id !== id);
+            renderCartUI();
+        }
+
+        function adjustCartItemPortions(id, amount) {
+            const item = shoppingCart.find(i => i.id === id);
+            if (item) {
+                item.portions = Math.max(5, item.portions + amount); // Minimum 5 Portionen
+                renderCartUI();
+            }
+        }
+
+        function renderCartUI() {
+            const container = document.getElementById('cart-items-container');
+            container.innerHTML = '';
+            
+            let totalPortions = 0;
+
+            if (shoppingCart.length === 0) {
+                container.innerHTML = '<p class="text-xs text-slate-500 text-center py-4 bg-slate-950 rounded-lg border border-slate-800">Dein Korb ist leer.</p>';
+            }
+
+            shoppingCart.forEach(item => {
+                const recipe = recipes.find(r => r.id === item.id);
+                totalPortions += item.portions;
+
+                const div = document.createElement('div');
+                div.className = "bg-slate-950 border border-slate-800 rounded-xl p-3 flex flex-col gap-2 relative group";
+                div.innerHTML = `
+                    <div class="flex justify-between items-start">
+                        <span class="text-sm font-bold text-white leading-tight pr-6">${recipe.name}</span>
+                        <button onclick="removeRecipeFromCart(${item.id})" class="absolute top-2 right-2 text-slate-500 hover:text-red-400 font-bold w-6 h-6 flex items-center justify-center rounded-full hover:bg-slate-900 transition">&times;</button>
+                    </div>
+                    <div class="flex items-center space-x-2 bg-slate-900 w-fit p-1 rounded-lg border border-slate-800 mt-1">
+                        <button onclick="adjustCartItemPortions(${item.id}, -5)" class="w-7 h-7 bg-slate-800 hover:bg-slate-700 rounded flex items-center justify-center font-bold text-white text-lg transition">-</button>
+                        <span class="w-10 text-center font-bold text-white text-sm">${item.portions}</span>
+                        <button onclick="adjustCartItemPortions(${item.id}, 5)" class="w-7 h-7 bg-slate-800 hover:bg-slate-700 rounded flex items-center justify-center font-bold text-white text-sm transition">+</button>
+                    </div>
+                `;
+                container.appendChild(div);
+            });
+
+            const weeks = Math.round((totalPortions / 5) * 10) / 10;
+            document.getElementById('duration-estimate').innerHTML = `
+                Mit insgesamt <strong class="text-white">${totalPortions} Wraps</strong> bist du für ca. <strong class="text-white">${weeks} Schulwochen</strong> perfekt aufgestellt (Mo-Fr).
+            `;
+
+            updateShoppingList();
+        }
+
+        // Parse ingredient strings into numbers and text
+        function parseIngredient(ingText) {
+            let amount = 0;
+            let unit = '';
+            let baseName = ingText;
+
+            // Brüche für Berechnungen umwandeln (1/2 -> 0.5)
+            let textToParse = ingText.replace("1/2", "0.5").replace("1/4", "0.25").replace("3/4", "0.75");
+
+            let regex = /^(\d+[\.,]?\d*)\s*(g|kg|ml|TL|EL|Tube|Scheiben|Scheibe|Dose|Handvoll|Prise)?\s*(.*)$/i;
+            let match = textToParse.trim().match(regex);
+
+            if (match) {
+                amount = parseFloat(match[1].replace(',', '.'));
+                unit = match[2] || '';
+                baseName = match[3] || ingText;
+            }
+
+            return { amount, unit, baseName: baseName.trim() };
+        }
+
+        // Categorize into Supermarket departments
+        function determineCategory(name) {
+            const lower = name.toLowerCase();
+            
+            const meatProtein = ['hähnchen', 'rind', 'hack', 'schinken', 'bacon', 'sucuk', 'fisch', 'puten', 'tofu', 'thunfisch'];
+            const dairy = ['käse', 'mozzarella', 'cheddar', 'gouda', 'feta', 'frischkäse', 'ei', 'eier', 'quark', 'tzatziki', 'sahne', 'joghurt', 'parmesan', 'grana'];
+            const veggies = ['zwiebel', 'paprika', 'spinat', 'salat', 'gurke', 'jalapeno', 'apfel', 'sellerie', 'brokkoli', 'tomate', 'knoblauch', 'cranberries', 'rosinen', 'peperoni'];
+            const pantry = ['wrap', 'sauce', 'tomatenmark', 'passierte', 'mais', 'kichererbsen', 'reis', 'haferflocken', 'bohnen', 'teriyaki', 'remoulade', 'bbq', 'chili'];
+            
+            if (meatProtein.some(k => lower.includes(k))) return "🥩 Fleisch & Protein";
+            if (dairy.some(k => lower.includes(k))) return "🧀 Kühlregal & Käse";
+            if (veggies.some(k => lower.includes(k))) return "🥦 Obst & Gemüse";
+            if (pantry.some(k => lower.includes(k))) return "🥫 Vorrat & Saucen";
+            
+            return "🧂 Gewürze & Sonstiges";
+        }
+
+        function updateShoppingList() {
+            const container = document.getElementById('shopping-list-categories');
+            container.innerHTML = '';
+
+            if (shoppingCart.length === 0) {
+                container.innerHTML = '<div class="col-span-full text-center text-slate-500 py-8">Füge links Rezepte hinzu, um deinen Einkaufszettel zu generieren.</div>';
+                return;
+            }
+
+            // Categories Setup
+            const categories = {
+                "🥦 Obst & Gemüse": [],
+                "🥩 Fleisch & Protein": [],
+                "🧀 Kühlregal & Käse": [],
+                "🥫 Vorrat & Saucen": [],
+                "🧂 Gewürze & Sonstiges": []
+            };
+
+            const ingredientMap = {};
+
+            // 1. Process and aggregate ingredients
+            shoppingCart.forEach(cartItem => {
+                const recipe = recipes.find(r => r.id === cartItem.id);
+                if(!recipe) return;
+
+                recipe.ingredients.forEach(ingText => {
+                    const parsed = parseIngredient(ingText);
+                    
+                    if (parsed.amount === 0) {
+                        // Un-scalable items (like "Salz & Pfeffer")
+                        if (!ingredientMap[parsed.baseName]) {
+                            ingredientMap[parsed.baseName] = { name: parsed.baseName, amount: 0, unit: '', category: determineCategory(parsed.baseName) };
+                        }
+                    } else {
+                        // Scale by portions
+                        let scaledAmount = parsed.amount * cartItem.portions;
+                        let keyName = parsed.baseName.toLowerCase();
+                        
+                        if(!ingredientMap[keyName]) {
+                            ingredientMap[keyName] = {
+                                name: parsed.baseName,
+                                amount: 0,
+                                unit: parsed.unit,
+                                category: determineCategory(parsed.baseName)
+                            };
+                        }
+                        ingredientMap[keyName].amount += scaledAmount;
+                    }
+                });
+            });
+
+            // 2. Format and sort into UI categories
+            Object.values(ingredientMap).forEach(ing => {
+                let displayUnit = ing.unit;
+                let displayAmount = ing.amount;
+
+                if (displayAmount > 0) {
+                    if (displayUnit === 'g' && displayAmount >= 1000) {
+                        displayAmount = displayAmount / 1000;
+                        displayUnit = 'kg';
+                    }
+                    
+                    // Rounding fractions
+                    if (displayAmount % 1 !== 0) displayAmount = parseFloat(displayAmount.toFixed(1));
+                }
+                
+                let amountStr = displayAmount > 0 ? displayAmount.toString().replace('.', ',') : "";
+                
+                // Pluralize wraps
+                let nameStr = ing.name;
+                if (nameStr.toLowerCase().includes('wrap') && ing.amount > 1) {
+                    nameStr = nameStr.replace('Wrap', 'Wraps');
+                }
+
+                let text = displayAmount > 0 ? `${amountStr}${displayUnit ? ' ' + displayUnit : ''} ${nameStr}` : nameStr;
+
+                if (categories[ing.category]) {
+                    categories[ing.category].push(text);
+                } else {
+                    categories["🧂 Gewürze & Sonstiges"].push(text);
+                }
+            });
+
+            // 3. Render DOM
+            for (const [category, items] of Object.entries(categories)) {
+                if (items.length === 0) continue;
+
+                const catDiv = document.createElement('div');
+                catDiv.className = "bg-slate-950 p-4 rounded-xl border border-slate-800 break-inside-avoid";
+                catDiv.innerHTML = `
+                    <h4 class="text-xs font-bold uppercase tracking-wider text-orange-400 mb-3 border-b border-slate-800 pb-2">${category}</h4>
+                    <ul class="space-y-2.5 text-sm text-slate-300">
+                        ${items.map(i => `
+                            <li class="flex items-start gap-3 group">
+                                <input type="checkbox" class="mt-0.5 rounded border-slate-700 bg-slate-900 text-orange-500 focus:ring-orange-500 w-4 h-4 transition cursor-pointer">
+                                <span class="leading-tight group-hover:text-white transition">${i}</span>
+                            </li>
+                        `).join('')}
+                    </ul>
+                `;
+                container.appendChild(catDiv);
+            }
+        }
+
+        // Helper for Recipe Modals
+        function parseAndScaleIngredient(ingText, portions) {
+            const parsed = parseIngredient(ingText);
+            if (parsed.amount === 0) return ingText;
+
+            let scaledAmount = parsed.amount * portions;
+            let unit = parsed.unit;
+
+            if (unit === 'g' && scaledAmount >= 1000) {
+                scaledAmount = scaledAmount / 1000;
+                unit = 'kg';
+            }
+            
+            let formattedAmount = scaledAmount % 1 !== 0 ? scaledAmount.toFixed(1).replace('.', ',') : scaledAmount.toString();
+            let nameStr = parsed.baseName;
+            
+            if (nameStr.toLowerCase().includes('wrap') && portions > 1) {
+                nameStr = nameStr.replace('Wrap', 'Wraps');
+            }
+
+            return `${formattedAmount}${unit ? ' ' + unit : ''} ${nameStr}`;
+        }
+
+        // Clipboard functionality updated for multi-cart
+        function copyShoppingList() {
+            if (shoppingCart.length === 0) {
+                showToast("⚠️ Füge zuerst Rezepte in den Korb!");
+                return;
+            }
+
+            let text = `=== MEAL PREP EINKAUFSZETTEL ===\n\n`;
+            
+            // Read directly from DOM to keep categorization identical
+            const categories = document.querySelectorAll('#shopping-list-categories > div');
+            categories.forEach(catDiv => {
+                const catName = catDiv.querySelector('h4').textContent;
+                text += `--- ${catName} ---\n`;
+                
+                const items = catDiv.querySelectorAll('li span');
+                items.forEach(item => {
+                    text += `[ ] ${item.textContent}\n`;
+                });
+                text += `\n`;
+            });
+
+            text += `Generiert mit CRISP & PREP. Lass es dir schmecken!`;
+
+            const tempInput = document.createElement("textarea");
+            tempInput.value = text;
+            document.body.appendChild(tempInput);
+            tempInput.select();
+            document.execCommand("copy");
+            document.body.removeChild(tempInput);
+
+            showToast("📋 Einkaufszettel in Zwischenablage kopiert!");
+        }
+
+        // Custom clean Toast Notification
+        function showToast(message) {
+            const toast = document.createElement('div');
+            toast.className = "fixed bottom-5 right-5 z-50 bg-slate-950 border-2 border-orange-500 text-slate-100 px-6 py-3.5 rounded-xl shadow-2xl flex items-center gap-3 animate-bounce";
+            toast.innerHTML = `<span class="text-lg">🔥</span> <span class="text-sm font-semibold">${message}</span>`;
+            document.body.appendChild(toast);
+            
+            setTimeout(() => {
+                toast.remove();
+            }, 4000);
+        }
+
+        // Modal logic
+        function openModal(id) {
+            const recipe = recipes.find(r => r.id === id);
+            if (!recipe) return;
+
+            currentModalRecipeId = id;
+            currentModalPortions = 1;
+            document.getElementById('modal-portions-input').value = 1;
+
+            document.getElementById('modal-title').textContent = recipe.name;
+
+            // Set tags
+            const tags = document.getElementById('modal-tags');
+            tags.innerHTML = `
+                <span class="text-xs bg-slate-950 border border-slate-800 text-slate-400 px-2 py-1 rounded font-bold uppercase">${recipe.category}</span>
+                <span class="text-xs bg-orange-500/10 text-orange-400 border border-orange-500/20 px-2 py-1 rounded font-bold">Bohnenfrei 🚫</span>
+                <span class="text-xs bg-blue-500/10 text-blue-400 border border-blue-500/20 px-2 py-1 rounded font-bold">High Protein 💪</span>
+            `;
+
+            // Initial render of ingredients and nutrition
+            renderModalIngredients();
+
+            // List steps
+            const stepsList = document.getElementById('modal-steps');
+            stepsList.innerHTML = '';
+            recipe.steps.forEach(s => {
+                const li = document.createElement('li');
+                li.className = "pl-2";
+                li.textContent = s;
+                stepsList.appendChild(li);
+            });
+
+            // Custom reheating instruction
+            document.getElementById('modal-airfryer-tip').textContent = recipe.airfryer;
+
+            // Display modal
+            document.getElementById('recipe-modal').classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Lock background scroll
+        }
+
+        function adjustModalPortions(amount) {
+            let newPortions = parseInt(document.getElementById('modal-portions-input').value) + amount;
+            if (newPortions >= 1) {
+                setModalPortions(newPortions);
+            }
+        }
+
+        function setModalPortions(val) {
+            let parsed = parseInt(val);
+            if (isNaN(parsed) || parsed < 1) parsed = 1;
+            currentModalPortions = parsed;
+            document.getElementById('modal-portions-input').value = currentModalPortions;
+            renderModalIngredients();
+        }
+
+        function renderModalIngredients() {
+            const recipe = recipes.find(r => r.id === currentModalRecipeId);
+            if (!recipe) return;
+
+            // Update title
+            document.getElementById('modal-ingredients-title').textContent = `Zutaten für ${currentModalPortions} Wrap${currentModalPortions > 1 ? 's' : ''}`;
+
+            // Update nutrition info based on multiplier
+            document.getElementById('modal-kcal').textContent = `~${recipe.kcal * currentModalPortions} kcal`;
+            document.getElementById('modal-protein').textContent = `~${recipe.protein * currentModalPortions}g`;
+            document.getElementById('modal-carbs').textContent = `~${recipe.carbs * currentModalPortions}g`;
+            document.getElementById('modal-fat').textContent = `~${recipe.fat * currentModalPortions}g`;
+
+            // List scaled ingredients
+            const ingredientsList = document.getElementById('modal-ingredients');
+            ingredientsList.innerHTML = '';
+            recipe.ingredients.forEach(i => {
+                const li = document.createElement('li');
+                li.textContent = parseAndScaleIngredient(i, currentModalPortions);
+                ingredientsList.appendChild(li);
+            });
+        }
+
+        function closeModal() {
+            document.getElementById('recipe-modal').classList.add('hidden');
+            document.body.style.overflow = ''; // Unlock scroll
+        }
+
+        // Close modal when clicking outside of contents
+        window.onclick = function(event) {
+            const modal = document.getElementById('recipe-modal');
+            if (event.target === modal) {
+                closeModal();
+            }
+        };
+    </script>
+</body>
+</html>
